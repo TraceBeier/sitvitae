@@ -1,0 +1,58 @@
+{
+  "name": "@hybrd/utils",
+  "version": "0.4.6",
+  "description": "Solidity + TypeScript Framework for Web3 Development",
+  "author": "Ian Hunter <ian@ianh.xyz>",
+  "homepage": "https://github.com/ian/hybrid#readme",
+  "license": "ISC",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian/hybrid.git"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsup",
+    "dev": "nodemon"
+  },
+  "bugs": {
+    "url": "https://github.com/ian/hybrid/issues"
+  },
+  "dependencies": {
+    "abitype": "^0.7.1",
+    "bip39": "^3.1.0",
+    "chalk": "4.1.2",
+    "checksum": "^1.0.0",
+    "chokidar": "^3.5.3",
+    "commander": "^10.0.0",
+    "ethereum-private-key-to-address": "^0.0.7",
+    "ethers": "^5.6.8",
+    "figlet": "^1.5.2",
+    "inquirer": "^9.1.4",
+    "open": "^8.4.2",
+    "ora": "5.4.0",
+    "socket.io": "^4.6.1",
+    "viem": "^0.1.10"
+  },
+  "devDependencies": {
+    "@hybrd/types": "^0.4.6",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.14.6",
+    "nodemon": "^2.0.21",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
+  },
+  "gitHead": "333fbdbc25d6d69225dc7b156d66edf70e7bd66c"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "hybrid-connectkit",
+  "version": "0.4.6",
+  "description": "ConnectKit integration for Hybrid",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@hybrd/types": "^0.4.6",
+    "connectkit": "^1.2.1"
+  }
+}

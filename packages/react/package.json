@@ -1,0 +1,121 @@
+{
+  "name": "hybrid",
+  "author": "IanH <ian@ianh.xyz>",
+  "version": "0.4.6",
+  "description": "Solidity + TypeScript Framework for Web3 Development",
+  "keywords": [
+    "hybrid",
+    "wagmi",
+    "ethers",
+    "web3",
+    "react"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./client/index.d.ts",
+      "default": "./client/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "bin": {
+    "hy": "./dist/cli.mjs",
+    "hybrid": "./dist/cli.mjs"
+  },
+  "scripts": {
+    "clean": "rm -rf dist .rollup.cache",
+    "build": "rollup --config rollup.config.js",
+    "dev": "rollup --config rollup.config.js -w",
+    "lint": "eslint src --ext .ts",
+    "test": " vitest",
+    "test:ci": "yarn test:coverage && yarn test:report",
+    "test:report": "c8 report --reporter=text-lcov > coverage.lcov",
+    "test:coverage": "CI=true vitest --coverage"
+  },
+  "files": [
+    "dist/*",
+    "README.md"
+  ],
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "dts": true,
+    "clean": true,
+    "format": [
+      "esm",
+      "cjs"
+    ]
+  },
+  "dependencies": {
+    "@ethersproject/providers": "^5.7.1",
+    "@hybrd/cli": "^0.4.6",
+    "@hybrd/contracts": "^0.4.6",
+    "@hybrd/types": "^0.4.6",
+    "@hybrd/utils": "^0.4.6",
+    "abitype": "^0.7.1",
+    "axios": "^1.2.2",
+    "clsx": "^1.2.1",
+    "dayjs": "^1.11.7",
+    "ethers": "^5.6.8",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "tslib": "^2.4.1",
+    "twind": "^0.16.17"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@tanstack/react-query": "^4.3.4",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@tinyhttp/dotenv": "^2.0.4",
+    "@types/lodash": "^4.14.191",
+    "@types/react": "^18.0.18",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@vitejs/plugin-react": "^3.0.1",
+    "@vitest/coverage-c8": "^0.23.0",
+    "autoprefixer": "^10.4.12",
+    "c8": "^7.12.0",
+    "concurrently": "^7.4.0",
+    "jsdom": "^20.0.0",
+    "nock": "^13.2.9",
+    "nodemon": "^2.0.19",
+    "postcss": "^8.4.18",
+    "postcss-import": "^15.1.0",
+    "rollup": "^3.19.1",
+    "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-hashbang": "^3.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.9.0",
+    "tailwindcss": "^3.1.8",
+    "tsx": "^3.12.2",
+    "typescript": "^4.7.4",
+    "vi-fetch": "^0.8.0",
+    "vite": "^4.0.4",
+    "vitest": "^0.23.0",
+    "vitest-fetch-mock": "^0.2.1",
+    "wagmi": "^0.12.1"
+  },
+  "peerDependencies": {
+    "ethers": ">=5.5.1 <6",
+    "react": ">=17",
+    "react-dom": ">=17",
+    "wagmi": "^0.12.1"
+  },
+  "gitHead": "333fbdbc25d6d69225dc7b156d66edf70e7bd66c"
+}
